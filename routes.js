@@ -1,9 +1,9 @@
 // Grobal
-const HOME = "/";
-const JOIN = "/join";
-const LOGIN = "/login";
-const LOGOUT = "/logout";
-const SEARCH = "/search";
+const HOME = "/";          // 비디오들이 전달됨
+const JOIN = "/join";      // user와 관련
+const LOGIN = "/login";    // user와 관련
+const LOGOUT = "/logout";  // user와 관련
+const SEARCH = "/search";  // 비디오 검색
 
 // Users
 const USERS = "/users";
