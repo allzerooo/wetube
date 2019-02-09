@@ -1,5 +1,9 @@
+import { videos } from "../db"
+
 // home은 video들을 보여주기 때문에 video 컨트롤러에 위치
-export const video_home_Controller = (req, res) => res.render("home", { pageTitle: "Home"});
+export const video_home_Controller = (req, res) => {
+   res.render("home", { pageTitle: "Home", videos });
+}
 
 // search는 video를 탐색하기 때문에 video 컨트롤러에 위치
 export const video_search_Controller = (req, res) => {
