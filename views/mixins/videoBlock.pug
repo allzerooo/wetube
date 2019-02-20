@@ -1,3 +1,6 @@
 //- mixin에 입력되는 객체의 이름을 video로 지정
 mixin videoBlock(video = {})
-   h1 = video.title
+   .videoBlock
+      iframe.videoBlock__thumbnail(src=video.videoFile)
+      h4.videoBlock_title=video.title
+      h6.videoBlock_views=video.views

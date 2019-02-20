@@ -4,7 +4,7 @@ export const videos = [
       title: "Video 300",
       description: "Video 300.......",
       views: 20,
-      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      videoFile: "https://www.youtube.com/embed/WQYN2P3E06s",
       creator: {
          id: 1212,
          name: "chunbong",
@@ -16,7 +16,7 @@ export const videos = [
       title: "Video 301",
       description: "Video 301.......",
       views: 567,
-      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      videoFile: "https://www.youtube.com/embed/WQYN2P3E06s",
       creator: {
          id: 1212,
          name: "chunbong",
@@ -28,7 +28,7 @@ export const videos = [
       title: "Video 302",
       description: "Video 302.......",
       views: 20,
-      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      videoFile: "https://www.youtube.com/embed/WQYN2P3E06s",
       creator: {
          id: 1212,
          name: "chunbong",
@@ -40,7 +40,7 @@ export const videos = [
       title: "Video 303",
       description: "Video 303.......",
       views: 20,
-      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      videoFile: "https://www.youtube.com/embed/WQYN2P3E06s",
       creator: {
          id: 1212,
          name: "chunbong",
