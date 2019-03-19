@@ -21,7 +21,13 @@ export const user_postJoin_Controller = (req, res) => {
    }
 };
 
-export const user_login_Controller = (req, res) => res.render("login", { pageTitle: "Login"});
+
+export const user_getLogin_Controller = (req, res) => res.render("login", { pageTitle: "Login"});
+
+export const user_postLogin_Controller = (req, res) => {
+   res.redirect(routes.home);
+}
+
 export const user_logout_Controller = (req, res) => res.render("logout", { pageTitle: "Logout"});
 
 
