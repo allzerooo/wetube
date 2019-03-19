@@ -7,9 +7,11 @@ export const video_home_Controller = (req, res) => {
 
 // search는 video를 탐색하기 때문에 video 컨트롤러에 위치
 export const video_search_Controller = (req, res) => {
-   // const searchingBy == req.query.term
-   const {query: { term: searchingBy }} = req;
-   res.render("search", { pageTitle: "Search", searchingBy: searchingBy });
+   // const searchingBy == req.query.term : ES6 이전의 코딩 방식 
+   // term : input 태그의 name 속성
+   // tmer: searchingBy => term에 searchingBy라는 변수명을 할당
+   const {query: { term: searchingBy }} = req; 
+   res.render("search", { pageTitle: "Search", searchingBy });
 };
 
 export const video_upload_Controller = (req, res) => res.render("upload", { pageTitle: "Upload"});
