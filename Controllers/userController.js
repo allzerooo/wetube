@@ -1,7 +1,29 @@
+import routes from "../routes";
+
 // for global router
-export const user_join_Controller = (req, res) => res.render("join", { pageTitle: "Join"});
+export const user_getJoin_Controller = (req, res) => {
+   res.render("join", { pageTitle: "Join"});
+};
+
+export const user_postJoin_Controller = (req, res) => {
+   console.log(res);
+   const {
+      body: { name, email, password, verify_password }
+   } = req;
+
+   if ( password !== verify_password ) {
+      res.status(400);
+      res.render("join", { pageTitle: "Join"});
+   } else {
+      // To Do : Register User
+      // To Do : Log user in
+      res.redirect(routes.home);
+   }
+};
+
 export const user_login_Controller = (req, res) => res.render("login", { pageTitle: "Login"});
 export const user_logout_Controller = (req, res) => res.render("logout", { pageTitle: "Logout"});
+
 
 // for user router
 export const user_detail_Controller = (req, res) => res.render("userDetail", { pageTitle: "User Detail"});
