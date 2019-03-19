@@ -11,7 +11,7 @@ export const video_search_Controller = (req, res) => {
    // term : input 태그의 name 속성
    // tmer: searchingBy => term에 searchingBy라는 변수명을 할당
    const {query: { term: searchingBy }} = req; 
-   res.render("search", { pageTitle: "Search", searchingBy });
+   res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
 
 export const video_upload_Controller = (req, res) => res.render("upload", { pageTitle: "Upload"});
