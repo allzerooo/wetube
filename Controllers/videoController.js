@@ -1,4 +1,3 @@
-import { videos } from "../db"
 import routes from "../routes"
 
 // home은 video들을 보여주기 때문에 video 컨트롤러에 위치
