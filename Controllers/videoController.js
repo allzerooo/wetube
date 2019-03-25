@@ -1,8 +1,16 @@
 import routes from "../routes"
+import Video from "../models/Video";
 
 // home은 video들을 보여주기 때문에 video 컨트롤러에 위치
-export const video_home_Controller = (req, res) => {
-   res.render("home", { pageTitle: "Home", videos });
+export const video_home_Controller = async (req, res) => {
+   try {
+      // Database에 있는 모든 Video를 가져옴
+      const videos = await Video.find({});
+      res.render("home", { pageTitle: "Home", videos });
+   } catch(error) {
+      console.log(error);
+      res.render("home", { pageTitle: "Home", videos: [] });
+   }
 }
 
 // search는 video를 탐색하기 때문에 video 컨트롤러에 위치
