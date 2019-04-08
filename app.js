@@ -18,6 +18,7 @@ app.use(helmet());
 //setting
 app.set("view engine", "pug");
 
+// '/uploads/video'에 대한 routing을 위해 directory에서 file을 보내주는 middleware를 사용
 app.use("/uploads", express.static("uploads"));
 
 // middleware
