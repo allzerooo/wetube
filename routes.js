@@ -44,7 +44,7 @@ const routes = {
          return VIDEO_DETAIL;
       }
    },
-   editVdeo: EDIT_VIDEO,
+   editVideo: EDIT_VIDEO,
    deleteVideo: DELETE_VIDEO
 }
 

@@ -9,7 +9,7 @@ videoRouter.get(routes.upload, video_getUpload_Controller)
 videoRouter.post(routes.upload, uploadVideo, video_postUpload_Controller);
 
 videoRouter.get(routes.videoDetail(), video_detail_Controller);
-videoRouter.get(routes.editVdeo, video_edit_Controller);
+videoRouter.get(routes.editVideo, video_edit_Controller);
 videoRouter.get(routes.deleteVideo, video_delete_Controller);
 
 
