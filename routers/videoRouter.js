@@ -13,7 +13,7 @@ videoRouter.get(routes.videoDetail(), video_detail_Controller);
 videoRouter.get(routes.editVideo(), video_getEdit_Controller);
 videoRouter.post(routes.editVideo(), video_postEdit_Controller)
 
-videoRouter.get(routes.deleteVideo, video_delete_Controller);
+videoRouter.get(routes.deleteVideo(), video_delete_Controller);
 
 
 export default videoRouter;

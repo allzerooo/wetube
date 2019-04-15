@@ -11,7 +11,7 @@ export const video_home_Controller = async (req, res) => {
       console.log(error);
       res.render("home", { pageTitle: "Home", videos: [] });
    }
-}
+};
 
 // search는 video를 탐색하기 때문에 video 컨트롤러에 위치
 export const video_search_Controller = (req, res) => {
@@ -36,7 +36,7 @@ export const video_postUpload_Controller = async (req, res) => {
       description
    });
    res.redirect(routes.videoDetail(newVideo.id));
-}
+};
 
 export const video_detail_Controller = async (req, res) => {
    const {
@@ -44,12 +44,13 @@ export const video_detail_Controller = async (req, res) => {
    } = req;
    try {
       const video = await Video.findById(id);
-      res.render("videoDetail", { pageTitle: "Video Detail", video });
+      res.render("videoDetail", { pageTitle: video.title, video });
    } catch (error) {
       console.log(error);
       res.redirect(routes.home);
    }
 };
+
 export const video_getEdit_Controller = async (req, res) => {
    const {
       params: {id}
@@ -60,7 +61,7 @@ export const video_getEdit_Controller = async (req, res) => {
    } catch(error) {
       res.redirect(routes.home);
    }
-}
+};
 
 export const video_postEdit_Controller = async (req, res) => {
    const {
@@ -73,6 +74,15 @@ export const video_postEdit_Controller = async (req, res) => {
    } catch(error) {
       res.redirect(routes.home);
    }
-}
+};
 
-export const video_delete_Controller = (req, res) => res.render("deleteVideo", { pageTitle: "Delete Video"});
+export const video_delete_Controller = async (req, res) => {
+   const {
+      params: {id}
+   } = req;
+   try {
+      await Video.findOneAndRemove({ _id: id});
+   } catch(error) {
+   }
+   res.redirect(routes.home);
+};
