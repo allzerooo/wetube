@@ -12,7 +12,7 @@
     .header__column {
       i {
         color: white;
-        font-size: 40px;
+        font-size: 30px;
       }
       &:nth-child(2) {
         width: 100%;
@@ -40,6 +40,7 @@
           color: $black;
           font-weight: 600;
           &::placeholder {
+            font-weight: 300;
             color: rgba(0, 0, 0, 0.7);
           }
         }
