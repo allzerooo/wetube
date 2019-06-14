@@ -37,7 +37,9 @@ export const user_getLogin_Controller = (req, res) =>
   res.render("login", { pageTitle: "Login" });
 
 export const user_postLogin_Controller = passport.authenticate("local", {
+  // 실패했다면
   failureRedirect: routes.login,
+  // 성공했다면
   successRedirect: routes.home
 });
 
