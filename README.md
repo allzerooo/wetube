@@ -2,13 +2,15 @@
 
 Cloning Youtube with VanillaJS and NodeJS
 
-## Pages
+
+
+## Contents
 
 - Home
 - Join
-  - [+] with Github and Facebook
+  - with Github and Facebook
 - Login
-  - [+] with Github and Facebook
+  - with Github and Facebook
   - Logout은 페이지가 아니라 logout주소로 접근하면 다른 페이지로 redirect 되도록
   - session 저장 → ```connect-mongo```를 사용
 - Search
