@@ -47,12 +47,34 @@ export const postLogin = passport.authenticate("local", {
 
 export const githubLogin = passport.authenticate("github");
 
-export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
-  console.log(accessToken, refreshToken, profile, cb);
+export const githubLoginCallback = async (_, __, profile, cb) => {
+  const {
+    _json: { id, avatar_url, name, email }
+  } = profile;
+  try {
+    // user를 탐색
+    const user = await User.findOne({ email });
+    // user 탐색에 성공 ( 이미 가입한 사용자가 github으로 로그인했을 때 )
+    if (user) {
+      user.githubId = id;
+      user.save();
+      return cb(null, user);
+    }
+    // user 탐색에 실패
+    const newUser = await User.create({
+      email,
+      name,
+      githubId: id,
+      avatarUrl: avatar_url
+    });
+    return cb(null, newUser);
+  } catch (error) {
+    return cb(error);
+  }
 };
 
 export const postGithubLogin = (req, res) => {
-  res.send(routes.home);
+  res.redirect(routes.home);
 };
 
 export const logout = (req, res) => {
